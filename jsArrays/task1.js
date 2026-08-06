@@ -21,4 +21,3 @@ function countNumbers(array) {
 }
 
 countNumbers(numbers);
-н;
