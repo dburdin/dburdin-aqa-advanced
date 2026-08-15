@@ -32,3 +32,4 @@ console.log();
 fourthBook.printInfo();
 console.log();
 //!--------------------------------------
+console.log(Book.getOldestBook([firstBook, secondBook, thirdBook, fourthBook]));

@@ -1,4 +1,7 @@
 export class Book {
+  static getOldestBook(books) {
+    return [...books].sort((a, b) => a.year - b.year)[0];
+  }
   constructor({ name, author, year }) {
     this._name = name;
     this._author = author;
@@ -36,7 +39,9 @@ export class Book {
     }
   }
   set year(year) {
-    if (typeof year !== 'number') {
+    const currentYear = new Date().getFullYear();
+
+    if (typeof year !== 'number' || year > currentYear) {
       console.log('This year is not valid');
     } else {
       this._year = year;
