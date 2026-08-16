@@ -1,17 +1,26 @@
 import { Book } from './Book.js';
 
 export class EBook extends Book {
+  static fromBook({ name, author, year }, ext) {
+    return new EBook({
+      name,
+      author,
+      year,
+      ext,
+    });
+  }
+
   constructor({ ext, ...restProps }) {
     super(restProps);
 
-    this._ext = ext;
+    this.ext = ext;
   }
 
   printInfo() {
-    console.log('Name: ' + this._name);
-    console.log('Author: ' + this._author);
-    console.log('Year: ' + this._year);
-    console.log('File Extension: ' + this._ext);
+    console.log('Name: ' + this.name);
+    console.log('Author: ' + this.author);
+    console.log('Year: ' + this.year);
+    console.log('File Extension: ' + this.ext);
   }
 
   get ext() {

@@ -3,15 +3,15 @@ export class Book {
     return [...books].sort((a, b) => a.year - b.year)[0];
   }
   constructor({ name, author, year }) {
-    this._name = name;
-    this._author = author;
-    this._year = year;
+    this.name = name;
+    this.author = author;
+    this.year = year;
   }
 
   printInfo() {
-    console.log('Name: ' + this._name);
-    console.log('Author: ' + this._author);
-    console.log('Year: ' + this._year);
+    console.log('Name: ' + this.name);
+    console.log('Author: ' + this.author);
+    console.log('Year: ' + this.year);
   }
 
   get name() {
