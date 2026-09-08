@@ -9,15 +9,20 @@
 //! Викорситайте методи Promise.all та Promise.race передавши їм як аргумент масив з викликами функцій з п.п. 1-2.
 //! Присвойте значення отримані від цих виразів до змінних
 
-const first = fetch('https://jsonplaceholder.typicode.com/todos/1')
-  .then((res) => res.json())
-  .then((res) => console.log(res))
-  .catch((error) => console.log('Opps. Something gone wrong' + error.message));
+const getTodo = () => {
+  return fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then((res) => res.json())
+    .catch((error) => console.log('Oops. Something gone wrong: ' + error.message));
+};
 
-const second = fetch('https://jsonplaceholder.typicode.com/users/1')
-  .then((res) => res.json())
-  .then((res) => console.log(res))
-  .catch((error) => console.log('Opps. Something gone wrong' + error.message));
+const getUser = () => {
+  return fetch('https://jsonplaceholder.typicode.com/users/1')
+    .then((res) => res.json())
+    .catch((error) => console.log('Oops. Something gone wrong: ' + error.message));
+};
 
-Promise.all([first, second]);
-Promise.race([first, second]);
+const allResults = Promise.all([getTodo(), getUser()]);
+const raceResult = Promise.race([getTodo(), getUser()]);
+
+allResults.then((data) => console.log(data));
+raceResult.then((data) => console.log(data));
