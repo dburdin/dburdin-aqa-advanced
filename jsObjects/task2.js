@@ -4,6 +4,6 @@ const book = {
   year: '2026',
 };
 
-const { title, author, year } = book;
+const { title, author } = book;
 
 console.log(title, author);
