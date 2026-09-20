@@ -144,3 +144,4 @@ vite.config.ts.timestamp-*
 
 # Html-reporters
 html-report
+test-report.html
