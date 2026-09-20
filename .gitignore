@@ -142,5 +142,5 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
 
-# Prettier config
-.prettierrc
+# Html-reporters
+html-reporthtml-report
