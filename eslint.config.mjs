@@ -4,7 +4,7 @@ import globals from 'globals';
 import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default defineConfig([
-  globalIgnores(['node_modules/']),
+  globalIgnores(['node_modules/', 'html-report/']),
 
   {
     files: ['**/*.{js,mjs,cjs}'],
@@ -18,6 +18,7 @@ export default defineConfig([
       globals: {
         ...globals.browser,
         ...globals.node,
+        ...globals.jest,
       },
     },
     rules: {
